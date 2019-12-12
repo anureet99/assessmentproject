@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style> 
+	body {
+    color:yellow;
+    text-align: center;
+    background-image: url('news.jpg');
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-size: 24px;
+    font-family: 'Dancing Script', cursive;*/
+    /*-webkit-animation: backgroundScroll 15s linear 1;*/
+    /*-webkit-animation-fill-mode: forwards;*/
+    /*animation: backgroundScroll 40s linear 1;*/
+    /*animation-fill-mode: forwards;*/
+}
+</style>
+	<link rel="stylesheet" href="C:\Users\Anureet\Documents\Cricket\style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="C:\Users\Anureet\Documents\Cricket\style.css">
+</head>
+<body style="background-color:darkgrey">
+
+<div class="container">	
+<nav class="navbar navbar-expand-md bg-dark">
+	<img src="3.jpg" class="rounded" alt="Cinque Terre" width="50" height="35">
+    <ul class="navbar-nav">
+  	<li class="nav-item">
+      <a class="nav-link text-danger" href="C:\Users\Anureet\Documents\Cricket\index.html">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-danger" href="C:\Users\Anureet\Documents\Cricket\pp.html">Player Profile</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-danger" href="C:\Users\Anureet\Documnets\Cricket\news.html">News</a>
+    </li>
+    <li class="nav-item">
+    	<a class="nav-link text-danger" href="C:\Users\Anureet\Documents\Cricket\upcoming.html">Upcoming Matches</a>
+    	</li> 
+  </ul>
+</nav>
+</div>
+<br>
+<br>
+<h1 align="center">Latest News</h1>
+<div class="anim" >
+	<br>
+	<img id='display4' height="250" width="250" class="center">
+	<p  id="author4" class="center">Author : </p>
+	<p id="p14" class="center">Description : </p>
+	<p id="date4" class="center">publishedAt : </p>
+	<a id="a4" class="center">read more...</a>
+
+</div>
+
+<div class="anim" >
+	<br>
+	<img id='display1' class="center" height="250" width="250" >
+	<p  id="author1" class="center">Author : </p>
+	<p id="p11" class="center">Description : </p>
+	<p id="date1" class="center">publishedAt : </p>
+	<a id="a1" class="center">read more...</a>
+
+</div>
+<div class="anim" >
+	<br>
+	<img id='display2' class="center" height="250" width="250" >
+	<p  id="author2" class="center">Author : </p>
+	<p id="p12" class="center">Description : </p>
+	<p id="date2" class="center">publishedAt : </p>
+	<a id="a2" class="center">read more...</a>
+
+</div>
+<div class="anim">
+	<br>
+	<img id='display3' class="center" height="250" width="250" >
+	<p  id="author3" class="center">Author : </p>
+	<p id="p13" class="center">Description : </p>
+	<p id="date3" class="center">publishedAt : </p>
+	<a id="a3" class="center">read more...</a>
+
+</div>
+<div class="anim" >
+	<br>
+	<img id='display' class="center" height="250" width="250" >
+	<p  id="author" class="center">Author : </p>
+	<p id="p1" class="center">Description : </p>
+	<p id="date" class="center">publishedAt : </p>
+	<a id="a" class="center">read more...</a>
+
+</div>
+<script>
+var url='https://newsapi.org/v2/top-headlines?country=in&category=sports&apiKey=ab0bd9cb61084be7afc7f319c05e32c2'
+var xhr=new XMLHttpRequest()
+xhr.open('GET',url)
+xhr.onreadystatechange=test
+function test()
+{
+	if(this.status==200 && this.readyState==4)
+	{
+		var res_data=JSON.parse(this.responseText)
+		console.log(typeof res_data)
+		console.log(res_data)
+		var img_url = res_data.articles[6].urlToImage
+				var get_tag=document.getElementById('display')
+				get_tag.setAttribute('src',img_url)
+		var get_aut=document.getElementById("author")
+		get_aut.innerHTML +=res_data.articles[6].author
+		var get_des=document.getElementById("p1")
+		get_des.innerHTML +=res_data.articles[6].description
+		var get_date=document.getElementById("date")
+		get_date.innerHTML +=res_data.articles[6].publishedAt
+		var news_url=res_data.articles[6].url
+		var get_a=document.getElementById("a")
+		get_a.setAttribute('href',news_url)
+
+
+		var img_url1 = res_data.articles[19].urlToImage
+				var get_tag1=document.getElementById('display1')
+				get_tag1.setAttribute('src',img_url1)
+		var get_aut1=document.getElementById("author1")
+		get_aut1.innerHTML +=res_data.articles[19].author
+		var get_des1=document.getElementById("p11")
+		get_des1.innerHTML +=res_data.articles[19].description
+		var get_date1=document.getElementById("date1")
+		get_date1.innerHTML +=res_data.articles[19].publishedAt
+		var news_url1=res_data.articles[19].url
+		var get_a1=document.getElementById("a1")
+		get_a1.setAttribute('href',news_url1)
+
+		var img_url2 = res_data.articles[2].urlToImage
+				var get_tag2=document.getElementById('display2')
+				get_tag2.setAttribute('src',img_url2)
+		var get_aut2=document.getElementById("author2")
+		get_aut2.innerHTML +=res_data.articles[2].author
+		var get_des2=document.getElementById("p12")
+		get_des2.innerHTML +=res_data.articles[2].description
+		var get_date2=document.getElementById("date2")
+		get_date2.innerHTML +=res_data.articles[2].publishedAt
+		var news_url2=res_data.articles[2].url
+		var get_a2=document.getElementById("a2")
+		get_a2.setAttribute('href',news_url2)
+		
+		var img_url3 = res_data.articles[9].urlToImage
+				var get_tag3=document.getElementById('display3')
+				get_tag3.setAttribute('src',img_url3)
+		var get_aut3=document.getElementById("author3")
+		get_aut3.innerHTML +=res_data.articles[9].author
+		var get_des3=document.getElementById("p13")
+		get_des3.innerHTML +=res_data.articles[9].description
+		var get_date3=document.getElementById("date3")
+		get_date3.innerHTML +=res_data.articles[9].publishedAt
+		var news_url3=res_data.articles[9].url
+		var get_a3=document.getElementById("a3")
+		get_a3.setAttribute('href',news_url3)
+
+		var img_url4 = res_data.articles[16].urlToImage
+				var get_tag4=document.getElementById('display4')
+				get_tag4.setAttribute('src',img_url4)
+		var get_aut4=document.getElementById("author4")
+		get_aut4.innerHTML +=res_data.articles[16].author
+		var get_des4=document.getElementById("p14")
+		get_des4.innerHTML +=res_data.articles[16].description
+		var get_date4=document.getElementById("date")
+		get_date4.innerHTML +=res_data.articles[16].publishedAt
+		var news_url4=res_data.articles[16].url
+		var get_a4=document.getElementById("a4")
+		get_a4.setAttribute('href',news_url4)
+		
+			
+	}	
+}
+xhr.send();
+
+
+
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style> 
+ .split {
+  height: 100%;
+  position:fixed;
+  z-index: 1;
+  top: 100px;
+  overflow-x: hidden;
+  
+}
+.left {
+  width:50%;
+  left:0;
+  
+}
+.right {
+  right: 0;
+  width:50%; 
+   
+}
+	body  {
+    color:black;
+    text-align: center;
+    background-image: url('upcoming.jpg');
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-size: 24px;
+    font-family: 'Dancing Script', cursive;
+    /*-webkit-animation: backgroundScroll 15s linear 1;*/
+    /*-webkit-animation-fill-mode: forwards;*/
+    /*animation: backgroundScroll 40s linear 1;*/
+    /*animation-fill-mode: forwards;*/
+}
+@-webkit-keyframes backgroundScroll {
+    from {background-position: 0 0;}
+    to {background-position: -1350px 0px;}
+}
+
+</style>
+<link rel="stylesheet" type="text/css" href="C:\Users\Anureet\Documents\Cricket\style.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body style="background-image: url(upcoming.jpg); height: 650px; width: 1300px; background-size: cover;" >
+  <div class="container">
+<nav class="navbar navbar-expand-md bg-dark">
+  <img src="3.jpg" class="rounded" alt="Cinque Terre" width="50" height="35">
+    <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link text-danger" href="C:\Users\Anureet\Documents\Cricket\index.html">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-danger" href="C:\Users\Anureet\Documents\Cricket\pp.html">Player Profile</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-danger" href="C:\Users\Anureet\Documents\Cricket\news.html">News</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-danger" href="C:\Users\Anureet\Documents\Cricket\upcoming.html">Upcoming Matches</a>
+      </li> 
+  </ul>
+</nav>
+</div>
+<br>
+<br>
+<h1 align="center">Upcoming Matches</h1>
+<br>
+<br>
+<br>
+<div id="div1" class="divv1" align="center" style="height: 250px width: 250px">
+      
+      <p id="d1"></p>
+      <p id="t1"></p>
+      <p id="t2"></p>
+    </div>
+    <hr>
+    <div id="div1" class="divv1" align="center" style="height: 250px width: 250px">
+    
+      <p id="d3"></p>
+      <p id="t13"></p>
+      <p id="t23"></p>
+    </div>
+    <hr>
+    <div id="div2" class="divv2" align="center" style="height: 250px width: 250px">
+     
+      <p id="d2"></p>
+      <p id="t12"></p>
+      <p id="t22"></p>
+    </div>
+    <hr>
+     <div id="div2" class="divv2" align="center" style="height: 250px width: 250px">
+     
+      <p id="d4"></p>
+      <p id="t14"></p>
+      <p id="t24"></p>
+    </div>
+    <hr>
+    <div id="div2" class="divv2" align="center" style="height: 250px width: 250px">
+     
+      <p id="d5"></p>
+      <p id="t15"></p>
+      <p id="t25"></p>
+    </div>
+    <hr>
+<script>
+var url='https://cricapi.com/api/matches?apikey=9JBYHQ8VeFcSHgtZIAW4hgP2N9m1'
+var xhr=new XMLHttpRequest()
+xhr.open('GET',url)
+xhr.onreadystatechange=test
+function test()
+{
+	if(this.status==200 && this.readyState==4)
+	{
+		var res_data=JSON.parse(this.responseText)
+		console.log(typeof res_data)
+		console.log(res_data)
+		
+			var match=res_data.matches
+      var data=match[21]
+      var date=document.getElementById("d1")
+      var team1=document.getElementById("t1")
+      var team2=document.getElementById("t2")
+        date.innerHTML="Date = "+data["date"]
+        team1.innerHTML="Team-1 = "+data["team-1"]
+        team2.innerHTML="Team-2 = "+data["team-2"]
+        data=match[19]
+      var date2=document.getElementById("d2")
+      var team12=document.getElementById("t12")
+      var team22=document.getElementById("t22")
+        date2.innerHTML="Date = "+data["date"]
+        team12.innerHTML="Team-1 = "+data["team-1"]
+        team22.innerHTML="Team-2 = "+data["team-2"]
+         data=match[20]
+      var date3=document.getElementById("d3")
+      var team13=document.getElementById("t13")
+      var team23=document.getElementById("t23")
+        date3.innerHTML="Date = "+data["date"]
+        team13.innerHTML="Team-1 = "+data["team-1"]
+        team23.innerHTML="Team-2 = "+data["team-2"]
+        data=match[49]
+      var date4=document.getElementById("d4")
+      var team14=document.getElementById("t14")
+      var team24=document.getElementById("t24")
+        date4.innerHTML="Date = "+data["date"]
+        team14.innerHTML="Team-1 = "+data["team-1"]
+        team24.innerHTML="Team-2 = "+data["team-2"]
+        data=match[47]
+      var date5=document.getElementById("d5")
+      var team15=document.getElementById("t15")
+      var team25=document.getElementById("t25")
+        date5.innerHTML="Date = "+data["date"]
+        team15.innerHTML="Team-1 = "+data["team-1"]
+        team25.innerHTML="Team-2 = "+data["team-2"]
+        
+
+//get_div1.innerHtml('data')
+  }
+}
+
+xhr.send();
+
+
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+</body>
+</html>

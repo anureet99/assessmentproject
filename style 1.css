@@ -1,0 +1,52 @@
+body {
+  margin:0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-size: auto;
+  background-image: C:\Users\HP\Desktop\CricketProject\Cricket1.jpg;
+}
+.c
+{
+	height:10%;
+	width:100%;
+}
+.topnav {
+  overflow: hidden;
+  /*background-color: #333;*/
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.topnav a.right {
+  float: right;
+  color: #f2f2f2;
+  margin-right:20px;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.topnav a:hover {
+  background-color:transparent;
+  color: green;
+}
+
+.topnav a.active {
+  background-color:transparent;
+  color: black;
+}
+.footer {
+   position:absolute;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   height: 15%;
+   background-color:lightgrey;
+   color: white;
+   text-align: center;
+}
